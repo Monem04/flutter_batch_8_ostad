@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'mone',
       home: Home(),
     );
@@ -24,37 +24,40 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'My Profile',
           style: TextStyle(
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w500,
             fontSize: 24,
           ),
         ),
-        backgroundColor: Colors.purpleAccent,
+        backgroundColor: Colors.amber,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.add)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.call)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.call)),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ProfileItem(
-              icon: Icons.icecream,
-              text: 'Ice cream is very delicious, right?',
-            ),
-            ProfileItem(
-              icon: Icons.code,
-              text: 'Programming is not boring if you love it',
-            ),
-            ProfileItem(
-              icon: Icons.egg,
-              text: 'If you submit code directly from ChatGPT, mark will be 0',
-            ),
-          ],
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ProfileItem(
+                icon: Icons.icecream_outlined,
+                text: 'Ice cream is very delicious, right?',
+              ),
+              ProfileItem(
+                icon: Icons.code,
+                text: 'Programming is not boring if you love it',
+              ),
+              ProfileItem(
+                icon: Icons.egg_outlined,
+                text: 'If you submit code directly from ChatGPT, mark will be 0',
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -82,11 +85,11 @@ class ProfileItem extends StatelessWidget {
               color: Colors.deepPurple,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             text,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ],
       ),
